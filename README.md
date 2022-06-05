@@ -1,5 +1,4 @@
-# -logic-and-design
-all logic and design documentation from 2021 - 2022. youre welcome
+# learning to become a quality programmer
 
 this respository will serve as a hub for all the pseudocode, charts, wireframes i have written
 to become a programmer with good logic & design.
