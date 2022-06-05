@@ -1,8 +1,8 @@
 9. Design a program that computes					Weekly Gross Pay ($) 		Withholding Percentage (%)
-pay for employees.									0.00–300.00 				10
-Allow a user to continuously						300.01–550.00 				13
-input employees’ names until						550.01–800.00 				16
-an appropriate sentinel value						800.01 and up 				20
+pay for employees.							0.00–300.00 			10
+Allow a user to continuously						300.01–550.00 			13
+input employees’ names until						550.01–800.00 			16
+an appropriate sentinel value						800.01 and up 			20
 is entered. Also input each
 employee’s hourly wage and
 hours worked. Compute each employee’s gross pay (hours times rate), withholding
