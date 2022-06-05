@@ -1,0 +1,67 @@
+9. Design a program that computes					Weekly Gross Pay ($) 		Withholding Percentage (%)
+pay for employees.									0.00–300.00 				10
+Allow a user to continuously						300.01–550.00 				13
+input employees’ names until						550.01–800.00 				16
+an appropriate sentinel value						800.01 and up 				20
+is entered. Also input each
+employee’s hourly wage and
+hours worked. Compute each employee’s gross pay (hours times rate), withholding
+tax percentage (based on Table 6-5), withholding tax amount, and net pay
+(gross pay minus withholding tax). 
+Display all the results for each employee.
+After the last employee has been entered, display the sum of all the hours
+worked, the total gross payroll, the total withholding for all employees, and the
+total net payroll.
+
+start
+	declerations()
+		string name;
+		num hourlyWage;
+		num hoursWorked;
+		num grossPay;
+		num tax;
+		num taxAmount;
+		num netPay;
+
+		num sub;
+		num SIZE = 4;
+		num tax_Percent[SIZE] = 10, 13, 16, 20;
+		num gross_Pay_Lower[SIZE] = 0.00, 300.01, 500.01, 800.01;
+
+		num totalHours;
+		num totalGross;
+		num totalTax;
+		num totalNet
+
+	housekeeping()
+		output "please enter employee's name, hourly wage, and hours worked";
+		input name, hourlyWage, hoursWorked;
+		
+		
+	detailLoop();
+		while (name != QUIT) {
+				sub = SIZE - 1		
+				while (grossPay < gross_Pay_Lower[sub]) {
+					sub = sub - 1;
+				}end while
+			grossPay = hourlyWage * hoursWorked;
+			tax = tax_Percent[sub];
+			taxAmount = grossPay / (tax / 100);
+			netPay = grossPay - taxAmount;
+
+			totalHours = totalHours + hourswWorked;
+			totalGross = totalGross + grossPay;
+			totalTax = totalTax * taxAmount;
+			totalNet = totalNet * netPay;
+
+		output "please enter employee's name, hourly wage, and hours worked";
+		input name, hourlyWage, hoursWorked;
+		}end while
+
+	endOfJob();
+		output "total hours worked for all employees is " + totalHours;
+		output "total gross pay for all employees is" + totalGross;
+		output "total total tax for all employees is" + totalTax;
+		output "total net pay for all employees is" + totalNet;
+		output "thank you for using this program";
+stop	
