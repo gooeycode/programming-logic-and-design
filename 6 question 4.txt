@@ -1,0 +1,175 @@
+4. a. Registration workers at a conference for authors of children’s books have
+collected data about conference participants, including the number of books
+each author has written and the target age of their readers. The participants have
+written from 1 to 40 books each, and target readers’ ages range from 0 through 16.
+
+Design a program that continuously accepts an author’s name, number of books
+written, and target reader age until a sentinel value is entered. Then display a list of
+how many participants have written each number of books (1 through 40).
+
+declerations
+	num sub;
+
+	string name;
+	num bookTotal;
+	num targetAge;
+	string names[];
+	num book[];
+	num age[];
+	num totalName;
+
+housekeeping()
+	output "please enter authors name, number of books written, and target age of their readers";
+	input name, bookTotal, targetAge
+
+detailLoop()
+// filling the array
+	sub = 0
+	while (name != QUIT) {
+		name = names[sub];
+		noOfBooks = book[sub]
+		targetAge = age[sub];
+		sub = sub + 1
+		output "please enter authors name, number of books written, and target age of their readers";
+		input name, noOfBooks, targetAge
+	}end while
+	totalName = sub;
+
+//display array of name and eachbook amount
+	sub = 0;
+	while (sub <= totalName) {
+		output "authour " + name[sub] + "has " + books[sub] + "books published ";
+		sub = sub + 1
+		}end while
+
+
+b. Modify the author registration program so that the output is a list of how many
+participants have written 1 to 5 books, 6 to 12 books, and 13 or more books.
+
+06:41 27/01/2022
+
+declerations
+	num sub;
+	string name;
+	num bookTotal;
+	num targetAge;
+	string names[];
+	num book[];
+	num age[];
+	num totalName;
+
+
+	num SIZE = 1000;
+	num 125Books;
+	num 6212Books;
+	num 13PlusBooks;
+
+	num totalAuthors;
+	num TOTALBOOKS = 3;
+	num total_books[TOTALBOOKS] = 1, 6, 13;
+	string book_total[TOTALBOOOKS] = "1-5", "6-12", "13 or more";
+	num total_books_count[TOTALBOOKS]
+		
+housekeeping()
+	output "please enter authors name, number of books written, and target age of their readers";
+	input name, bookTotal, targetAge
+
+detailLoop()
+
+// filling the array
+	sub = 0
+	while (name != QUIT) {
+		name = names[sub];
+		noOfBooks = book[sub]
+		targetAge = age[sub];
+		sub = sub + 1
+		output "please enter authors name, number of books written, and target age of their readers";
+		input name, noOfBooks, targetAge
+	}end while 
+	totalAuthors = sub;
+
+
+//filling another array depending on the amount of books the author has written
+	sub = 0
+	bookSub = TOTALBOOKS - 1;
+		while (sub <= totalAuthors) {
+				while (book[sub] < total_books[bookSub]) {
+					bookSub = bookSub - 1;
+				}end while
+				total_books_count[sub] = total_books_count[sub] + 1;
+			sub = sub + 1
+		}end while
+
+// displaying the array
+	sub = 0
+	bookSub = TOTALBOOKS - 1
+		while (sub <= bookSub) {
+			output "number of authors with" + book_total[sub] + " is " + total_books_count[sub];
+		sub = sub + 1
+		}end while
+endOfJob()
+	output "thank you for using this program"
+
+
+
+c. Modify the author registration program so that the output is a count of the
+number of books written for each of the following age groups: under 3, 3 through
+7, 8 through 10, 11 through 13, and 14 and older.
+
+THIS IS THE RANGE QUESTION. COME BACK TO ANSWER THIS WITH ARRAYS
+
+declerations
+	num sub;
+	string name;
+	num bookTotal;
+	num targetAge;
+	string names[];
+	num book[];
+	num age[];
+	num totalName;
+	num SIZE = 1000;
+	num totalAuthor;
+	num QUIT = 999;
+
+	
+	num AGESIZE = 5
+	num age_count[AGESIZE];
+	string age_range_name[AGESIZE] = "under 3", "3-7", "8-10", "11 - 13", "14+";
+	num age_range_num[AGESIZE] = 0, 3, 8, 11, 14;
+
+
+// filling the array
+	sub = 0
+	while (name != QUIT) {
+		name = names[sub];
+		noOfBooks = book[sub]
+		targetAge = age[sub];
+		sub = sub + 1
+		output "please enter authors name, number of books written, and target age of their readers or QUIT to exit";
+		input name, noOfBooks, targetAge;
+	}end while 
+	totalAuthor= sub;
+
+
+
+// filling the array depending on the number of books for the age group
+	sub = 0;
+	ageSub = AGESIZE - 1;
+		while (sub <= totalAuthor) {
+			while (age[sub] < age_range_num[ageSub]) {
+				ageSub = ageSub - 1;
+			}end while
+		age_count[sub] = age_count[sub] + book[sub];
+		sub = sub + 1
+		}end while
+
+
+//displaying the array
+	sub = 0
+	ageSub = AGESIZE - 1;	
+	while (sub <= AGESIZE - 1) {
+		output "authous of age range" + age_range[sub] is + age_count[sub]
+		sub = sub + 1
+	} end while
+
+output "thank you for using this program";
