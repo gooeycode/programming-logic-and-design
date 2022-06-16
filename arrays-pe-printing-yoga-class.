@@ -1,9 +1,9 @@
 5. a. The Downdog Yoga Studio offers five			    Class Number 	Class Name
 types of classes, as shown in Table 6-2.			    1 		        Yoga 1
-Design a program that accepts a					        2 		        Yoga 2
+Design a program that accepts a					    2 		        Yoga 2
 number representing a class and then 				    3		        Children’s Yoga
-displays the name of the class.					        4 		        Prenatal Yoga
-								                        5 		        Senior Yoga
+displays the name of the class.					    4 		        Prenatal Yoga
+								    5 		        Senior Yoga
 								                        Table 6-2 Downdog Yoga Studio classes
 
 
