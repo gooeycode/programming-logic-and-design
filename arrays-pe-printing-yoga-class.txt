@@ -1,0 +1,93 @@
+5. a. The Downdog Yoga Studio offers five			    Class Number 	Class Name
+types of classes, as shown in Table 6-2.			    1 		        Yoga 1
+Design a program that accepts a					        2 		        Yoga 2
+number representing a class and then 				    3		        Children’s Yoga
+displays the name of the class.					        4 		        Prenatal Yoga
+								                        5 		        Senior Yoga
+								                        Table 6-2 Downdog Yoga Studio classes
+
+
+declerations
+	num classInput;
+	num SIZE = 5;
+	string class_name[SIZE] = "Yoga 1", "Yoga 2", "Children's Yoga", "Prenatal Yoga", "Senior Yoga";
+	num class_number[SIZE] = 1, 2, 3, 4, 5;
+	sub
+	foundIt = "N";
+
+housekeeping()
+	output "please input the class number";
+	input classInput;
+
+detailLoop()
+	sub = 0
+	foundIt = "N";
+		while (sub < SIZE || foundIt = "N") {
+			if (classInput == class_number[sub]) {
+				foundIt = "Y";
+			}end if
+			sub = sub + 1;
+		}end while
+		if (foundIt = "Y") {
+			output "name for the class number " + class_number[sub]"  "is " + class_name[sub];
+		}end if
+	
+
+endOfJob()
+	output "thank you for using this program";
+
+	
+
+b. Modify the Downdog Yoga Studio
+program so that numeric class requests
+can be entered continuously until a
+sentinel value is entered. 
+
+Then display
+each class number, name, and a count
+of the number of requests for each class.
+
+display the class number and name
+
+counting each time a class has been requested
+
+declerations
+	num classInput;
+	num SIZE = 5;
+	string class_name[SIZE] = "Yoga 1", "Yoga 2", "Children's Yoga", "Prenatal Yoga", "Senior Yoga";
+	num class_number[SIZE] = 1, 2, 3, 4, 5;
+	sub
+	foundIt = "N";
+	num class_count[SIZE];
+	num QUIT = 999;
+	num classsize = SIZE - 1;
+				
+housekeeping()
+	output "please input the class number";
+	input classInput;
+
+detailLoop()
+	while (classInput != QUIT) {
+		sub = 0;
+		foundIt = "N" // flag variable
+		while (sub < SIZE || foundIt = "N") {
+			if(classInput = class_number[sub]) {
+				foundIt = "Y" // flag variable
+			class_count[sub] = class_count[sub} + 1;
+			}end if
+		sub = sub + 1
+		}end while
+	output "please input the class number";
+	input classInput;
+	}end while
+
+	sub = 0;
+	while (sub < classsize) {
+		output "number of of requests for" + class_name[sub] + " totals to " + class_count[sub];
+		sub + sub + 1;
+	}while
+
+endOfJob()
+	output "Thank you For using this program";		
+
+	
