@@ -1,0 +1,115 @@
+6. a. Watson Elementary School contains 30 classrooms numbered 1 through 30.
+Each classroom can contain any number of students up to 35. Each student
+takes an achievement test at the end of the school year and receives a score
+from 0 through 100. 
+
+Write a program that accepts data for each student in the
+school—student ID, classroom number, and score on the achievement test.
+
+Design a program that lists the total points scored for each of the 30 classrooms.
+
+declerations
+	num studentID;
+	num classroomNo;
+	num score;
+
+	num CLASS_TOTAL= 30;
+	num class_number[CLASS_TOTAL];
+
+	num CLASS_SIZE = 35;
+	num total_class_students[CLASS_SIZE];
+
+	num class_total[];
+	
+	classSub; //used to iterate through classes
+	studentSub; //used to iterate through students in classes
+	sub
+	
+housekeeping()
+	output "please input student ID, classroom number, & score";
+	input studentID, classroomNo, score;
+
+detailLoop()
+
+//finding the classroom number
+	sub = 0;
+	foundIt = "N";
+		while (classroomNo < CLASS_SIZE || foundIt = "N") {
+			if (classroom NPfoundit = "Y";
+			sub = sub + 1
+		}end while
+	if (foundit = "Y") {
+		class_number[sub] = class_number[sub] + score;
+
+
+		while (classSub <= class_number[CLASS_TOTAL]) {
+			studentSub = 0
+
+				while (studentSub <= total_class_students[CLASS_SIZE[) {
+					class_total[studentSub] = class_total[studentSub] + score;
+					studentSub = studentSub + 1
+					output "please input student ID, classroom number, & score";
+					input studentID, classroomNo, score;
+				}end while
+		classSub = classSub + 1;
+		}end while
+
+
+//display score per class
+	classSub = 0
+		while (classSub != CLASS_TOTAL) {
+			output "total score for class" + class_number[sub] + "is " + class_total[classSub];
+			classSub + classSub + 1;
+		} end while
+
+endOfJob()
+
+output "thank you for using this program"
+			
+b. Modify the Watson Elementary School program so that the average of the test
+scores is output for each classroom, rather than total scores for each classroom.
+
+
+declerations
+	num studentID;
+	num classroomNo;
+	num score;
+	num CLASS_TOTAL= 30;
+	num class_number[CLASS_TOTAL];
+	num CLASS_SIZE = 35;
+	num total_class_students;
+	num class_total[];
+	num QUIT = 999;
+	class average is
+	
+	classSub;
+	studentSub;
+	
+housekeeping()
+	output "please input student ID, classroom number, & score";
+	input studentID, classroomNo, score;
+
+
+detailLoop()
+	while (studentID != QUIT) {
+		classSub = 0;
+			while (classSub < CLASS_TOTAL) {
+				studentSub = 0
+					while (studentSub < CLASS_SIZE) {
+						class_total[studentSub] = class_total[studentSub] + score;
+						studentSub = studentSub + 1
+						output "please input student ID, classroom number, & score";
+						input studentID, classroomNo, score;
+					}end while
+			classSub = classSub + 1;
+			}end while
+	}end while
+
+//display score per class
+	classSub = 0
+		while (classSub != CLASS_TOTAL) {
+			output "average score for class" + (classSub + 1) + "is " + (class_total[classSub] / CLASS_SIZE) ;
+			classSub + classSub + 1;
+		} end while
+
+endOfJob()
