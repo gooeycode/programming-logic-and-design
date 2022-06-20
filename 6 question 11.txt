@@ -1,0 +1,323 @@
+12. Glen Ross Vacation Property Sales employs seven salespeople, as shown in Table 6-8.
+When a salesperson makes a sale, a
+record is created, including the date,
+time, and dollar amount of the sale. The
+time is expressed in hours and minutes,
+based on a 24-hour clock. The sale
+amount is expressed in whole dollars.
+Salespeople earn a commission that
+differs for each sale, based on the rate
+schedule in Table 6-9.
+
+08:23 02/02/2022
+
+ID Number 	Salesperson Name
+103 		Darwin
+104 		Kratz
+201 		Shulstad
+319 		Fortune
+367 		Wickert
+388 		Miller
+435 		Vick
+
+
+Sale Amount ($) 	Commission Rate (%)
+0–50999 			4
+51000–125999 		5
+126000–200999 		6
+201000 and up 		7
+
+Design an application that produces each
+of the following:
+
+a. A list of each salesperson number,
+name, total sales, and total
+commissions
+
+declerations
+	num sub;
+	num SIZE = 7;
+	num id_no[SIZE] = 103, 104, 201, 319, 367, 388, 435;
+	string id_name[SIZE] = "Darwin", "Kratz", "Shulstad", "Fortune", "Wickert", "Miller", "Vick";
+	num total_sales[SIZE];
+	num total_commisions[SIZE]
+	
+	num SIZE_TWO = 4;
+	num sale_range[SIZE_TWO] = 0, 51000, 126000, 201000;
+	num commision_rate[SIZE_TWO] = 4, 5, 6, 7;
+	num total_sales[
+	
+	num Id;
+	num date;
+	num time;
+	num saleAmount;
+	num saleCommission;
+	string name;
+
+
+	num totalSales;
+	num totalCommissions;
+	string foundIt;
+
+houskeeping()
+	output "input salesperson ID, time and date of sale, and how much the sale was";
+	input Id, date, time, saleAmount;
+
+detailLoop()
+
+	while (Id != QUIT) {
+//calculating the commision size
+	sub = SIZE_TWO - 1;
+		while (saleAmount < sale_range[SIZE_TWO]) {
+			sub = sub - 1;
+		} end while
+		saleCommission = saleAmount * commision_rate[sub];
+
+// registering sale commision and sale amount to an ID & name 
+
+	sub = SIZE - 1;
+	foundIt = "N"
+
+		while (Id < id_no[sub] || foundIt = "N") {
+			if (Id = id_no[sub]) {
+				foundIt = "Y";
+				name = id_name[sub]; // this was the missing line, remember its parralel arrays at work here. you find the id number to get the name associlated with the element
+			} end if
+			
+		sub = sub - 1
+		} end while
+
+		if (foundIt = "Y") {
+			total_sales[sub] = total_sales[sub] + saleAmount;
+			total_commisions[sub] = total_commisions[sub] + saleCommision;
+		
+		}end if
+		else {
+				output "wrond Id";
+			} end else
+	output "input salesperson ID, time and date of sale, and how much the sale was";
+	input Id, date, time, saleAmount;
+	}end while
+
+//display it
+sub = 0
+	while (sub < SIZE) {
+		output id_name[sub] + "had total sales of " + totalsales[sub] + "with total commissions of" + totalcommisions[sub];
+	sub = sub + 1;
+	}end while
+
+
+b. A list of each month of the year as
+both a number and a word (for
+example, 01 January), and the total
+sales for the month for all
+salespeople
+
+declerations
+	num sub;
+	num SIZE = 7;
+	num id_no[SIZE] = 103, 104, 201, 319, 367, 388, 435;
+	string id_name[SIZE] = "Darwin", "Kratz", "Shulstad", "Fortune", "Wickert", "Miller", "Vick";
+	num total_sales[SIZE];
+	num total_commisions[SIZE]
+	
+	num SIZE_TWO = 4;
+	num sale_range[SIZE_TWO] = 0, 51000, 126000, 201000;
+	num commision_rate[SIZE_TWO] = 4, 5, 6, 7;
+	num total_sales[
+	
+	num Id;
+	num date;
+	num time;
+	num saleAmount;
+	num saleCommission;
+	string name;
+
+
+	num totalSales;
+	num totalCommissions;
+	string foundIt;
+	
+	//addition of days
+	num month;
+	num MONTH_SIZE = 12;	
+	num month_number[MONTH_SIZE] = 01, 02, 03, 04, 05, 06 ,07, 08, 09, 10, 11, 12;
+	string month_name[MONTH_SIZE] = "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December";
+	num month_sales[MONTH_SIZE];
+
+houskeeping()
+	output "input salesperson ID, time and date of sale, and how much the sale was";
+	input Id, date, time, saleAmount;
+
+detailLoop()
+
+	while (Id != QUIT) {
+
+//registering the sale in the month
+	sub = MONTH_SIZE - 1;
+		while (month < month_number[sub]) {
+			if (month = month_number[sub] {
+				month_sales[sub] = month_sales[sub] + saleAmount;
+			}end if
+			else {
+				output "month not recognised"";
+			}end else
+			sub = sub - 1
+		}end while
+
+//calculating the commision size
+	sub = SIZE_TWO - 1;
+		while (saleAmount < sale_range[SIZE_TWO]) {
+			sub = sub - 1;
+		} end while
+		saleCommission = saleAmount * commision_rate[sub];
+
+// registering sale commision and sale amount to an ID & name 
+
+	sub = SIZE - 1;
+	foundIt = "N"
+
+		while (Id < id_no[sub] || foundIt = "N") {
+			if (Id = id_no[sub]) {
+				foundIt = "Y";
+				name = id_name[sub]; // this was the missing line, remember its parralel arrays at work here. you find the id number to get the name associlated with the element
+			} end if
+			else {
+				output "wrond Id";
+			} end else
+		sub = sub - 1
+		} end while
+
+		if (foundIt = "Y") {
+			total_sales[sub] = total_sales[sub] + saleAmount;
+			total_commisions[sub] = total_commisions[sub] + saleCommision;
+		
+		}end if
+	output "input salesperson ID, time and date of sale, and how much the sale was";
+	input Id, date, time, saleAmount;
+	}end while
+
+//display total sales for the month for all salespeople
+
+endOfJob()
+	sub = 0
+		while (sub < month_name[MONTH_SIZE]) {
+			output "sales for month" + month_number[sub] + month_number[string] + " for all salespeople is " + month_sales[sub];
+		sub = sub + 1;
+		}end while
+
+
+
+
+c. A list of total sales as well as total
+commissions earned by all
+salespeople for each of the
+following time frames, based on
+hour of the day: 00–05, 06–12,
+13–18, and 19–23
+
+
+declerations
+	num sub;
+	num SIZE = 7;
+	num id_no[SIZE] = 103, 104, 201, 319, 367, 388, 435;
+	string id_name[SIZE] = "Darwin", "Kratz", "Shulstad", "Fortune", "Wickert", "Miller", "Vick";
+	num total_sales[SIZE];
+	num total_commisions[SIZE]
+	
+	num SIZE_TWO = 4;
+	num sale_range[SIZE_TWO] = 0, 51000, 126000, 201000;
+	num commision_rate[SIZE_TWO] = 4, 5, 6, 7;
+	num total_sales[
+	
+	num Id;
+	num date;
+	num time;
+	num saleAmount;
+	num saleCommission;
+	string name;
+
+
+	num totalSales;
+	num totalCommissions;
+	string foundIt;
+	
+	//addition of days
+	num month;
+	num MONTH_SIZE = 12;	
+	num month_number[MONTH_SIZE] = 01, 02, 03, 04, 05, 06 ,07, 08, 09, 10, 11, 12;
+	string month_name[MONTH_SIZE] = "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December";
+	num month_sales[MONTH_SIZE];
+
+	
+	//addition of time of day
+	num HOURSIZE = 4;
+	num sale_hour_lower[HOURSIZE] = 00, 06, 13, 19; 
+
+houskeeping()
+	output "input salesperson ID, time and date of sale, and how much the sale was";
+	input Id, date, time, saleAmount;
+
+detailLoop()
+
+	while (Id != QUIT) {
+ //registering the sale in the hour
+
+
+	sub = MONTH_SIZE - 1;
+		while (month != month_number[sub]) {
+			if (month = month_number[sub] {
+				month_sales[sub] = month_sales[sub] + saleAmount;
+			}end if
+			else {
+				output "month not recognised"";
+			}end else
+			sub = sub - 1
+		}end while
+
+//calculating the commision size
+	sub = SIZE_TWO - 1;
+		while (saleAmount < sale_range[SIZE_TWO]) {
+			sub = sub - 1;
+		} end while
+		saleCommission = saleAmount * commision_rate[sub];
+
+// registering sale commision and sale amount to an ID & name 
+
+	sub = SIZE - 1;
+	foundIt = "N"
+
+		while (Id < id_no[sub] || foundIt = "N") {
+			if (Id = id_no[sub]) {
+				foundIt = "Y";
+				name = id_name[sub]; // this was the missing line, remember its parralel arrays at work here. you find the id number to get the name associlated with the element
+			} end if
+			else {
+				output "wrond Id";
+			} end else
+		sub = sub - 1
+		} end while
+
+		if (foundIt = "Y") {
+			total_sales[sub] = total_sales[sub] + saleAmount;
+			total_commisions[sub] = total_commisions[sub] + saleCommision;
+		
+		}end if
+	output "input salesperson ID, time and date of sale, and how much the sale was";
+	input Id, date, time, saleAmount;
+	}end while
+
+
+
+
+
+
+//display total sales for the month for all salespeople
+
+endOfJob()
+	sub = 0
+		while (sub < month_name[MONTH_SIZE]) {
+			output "sales for month" + month_number[sub] + month_number[string] + " for all salespeople is " + month_sales[sub];
+		sub = sub + 1;
+		}end while
+
