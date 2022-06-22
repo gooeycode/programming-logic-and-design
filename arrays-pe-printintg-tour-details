@@ -1,0 +1,88 @@
+Design the logic for an application that							                                      Number of Tourists 	Discount per Tourist ($)
+outputs each tour number, validated								                                          1–5 			          0
+start date, destination code, destination							                                      6–12 			          75
+name, number of travelers, gross total								                                      13–20 			        125
+price for the tour, and price for the tour after discount. The gross total price is		      21–50 			        200
+the tour price per guest times the number of travelers. The final price includes a		      51 and over 		    300
+discount for each person in larger tour groups, based on Table 6-7.
+
+//functions / module declerations
+	
+	dateVerify(bool, day, month, year) {
+		if ((day < 1 && day > 30) || (month < 1 && month > 12) || (year < 2022)) {
+			bool = false
+			return
+		}end if
+		else if (((day > 28) && (month == 2)) || (year < 2022)) {
+			bool = false;
+		}end if
+	}end dateVerify
+		// i need to have a think about how I would code verifying february
+
+declerations()
+	num tourNo;
+	num month;
+	num day;
+	num year;
+	num travelerTotal;
+	num code;
+	num QUIT = 999
+	
+	num SIZE = 5;
+	num no_of_tourists_lower[SIZE] = 1, 6, 13, 21, 51;
+	num discount_per_tourist[SIZE] = 0, 75, 125, 200, 300;
+	num destination_code[SIZE] = 1, 2, 3, 4;
+	num destination_price[SIZE] = 300.00, 480.00, 1050.00, 1300.00;
+	string destination_name[SIZE] = "Chicago", "Boston", "Miami", "San Fransisco";
+	
+	num pricePerPerson
+	num grossTotal;
+	num discountTotal;
+	num netTotal;
+	num sub
+	string foundIt;
+	
+housekeeping()
+	output "please enter three digit tour number, date of tour, number of travelers, and tour code destination";
+	input tourNo, day, month, year, travelerTotal, code;
+
+detailLoop()
+	while (starteDate != dateVerify() || (code < 1 && code > 4) {
+		output "please enter the right format of date. day number between 0 - 31, month number between 1 - 12, and year on or after 2022";
+		input tourNo, day, month, year, travelerTotal, code;
+	} end while
+	
+	while (tourNo != QUIT) {
+
+		// while statement 1 finds price for price for 1 person by parralell array code to desication
+			sub = SIZE - 1;
+				while (code < destination_code[sub] || foundIt = "N") {
+					if (code = destination_code[sub]) {
+						foundIt = "Y";
+					}
+					if (foundIt = "Y"{
+						pricePerPerson = destination_price[sub];
+					}end if
+					sub = sub - 1;
+				}end while
+				
+	
+		// while statement 2 find price discount for total number of people
+			sub = SIZE - 1;
+				while (travelerTotal < no_of_tourists_lower[sub]) {
+					sub = sub - 1
+				}end while
+				discountTotal = travelerTotal * discount_per_tourist[sub];
+		
+				grossTotal = travelerTotal * pricePerson;
+				netTotal = grossTotal - discountTotal;
+	}end while
+
+
+endOfJob();
+// output everything above
+			output " tour number is" + tourNo + ". Tour start date is" + day + "/" + month "/" + year
+output ". Destination name is" + destination_name[sub];
+output "number of travelers is " + travelerTotal;
+output "price before discount is " + grossTotal;
+output "price after discount is" + netTotal;
