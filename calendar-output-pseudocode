@@ -2,11 +2,13 @@ declerations
 	num SIZE = 12;
 	num month_number[SIZE] = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
 	num month_days[SIZE] = 31, 28, 31, 30, 31, 30, 31, 30, 31, 30, 31, 30;
+	string month_names[SIZE] = "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
 	num sub;
 
 detail loop()
-	while (sub < SIZE) {
-		output "Month" + month_number[sub] + " has " + month_days[sub] + " days";
+	sub = 0;
+	while (sub < month_number[SIZE]) {
+		output "Month" + month_names[sub] + " has " + month_days[sub] + " days";
 		sub = sub + 1;
 	}end while
 
