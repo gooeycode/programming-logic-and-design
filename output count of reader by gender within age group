@@ -1,8 +1,3 @@
-b. Modify the Daily Life Magazine program so that it produces a count of
-readers by gender within age group—that is, under-20 females, under-20 males,
-and so on.declerations
-
-
 	num age;
 	num gender;
 	num married;
