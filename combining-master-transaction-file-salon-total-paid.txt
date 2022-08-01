@@ -23,8 +23,7 @@ initialDeclerations()
 	input masterFile;
 	input transactionFile;
 	output updatedFile;
-	output errorReport;
-	output couponReport;
+
 
 	num tFirstName;
 	num tLastName;
@@ -50,7 +49,6 @@ readOpen()
 	open transactionFile "CurlUpAndDyeMaster.dat";
 	open masterFile "CurlUpAndDyeTransaction.dat";
 	open updatedFile "CurlUpAndDyeUpdated.dat";
-	open errorReport "CurlUpAndDyeErrorReport.dat";
 	checkTransaction();
 	checkMaster();
 	checkEnd();
@@ -78,4 +76,4 @@ finish();
 	close masterFile;
 	close transactionFile;
 	close updatedFile;
-	close errorReport;
+
