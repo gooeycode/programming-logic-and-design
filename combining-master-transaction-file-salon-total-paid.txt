@@ -1,0 +1,81 @@
+// functions
+
+	checkMaster() {
+		input mFirstName, mLastName, mTotalSpent, mId from masterFile;
+			if (endOfFile) {
+				mID = END;
+			}end if
+
+	checkTransaction() {
+		input tfirstName, tLastName, tTotalSpent, tId from transactionFile;
+			if (endOfFile) {
+				tId = END;
+			}end if
+
+	checkEnd() {
+		if (tId = END) {
+			if (mId = END) {
+				bothEnd = "Y";
+			}end if
+		}end if
+
+initialDeclerations()
+	input masterFile;
+	input transactionFile;
+	output updatedFile;
+	output errorReport;
+	output couponReport;
+
+	num tFirstName;
+	num tLastName;
+	num tserviceCost;
+	string tServiceName;
+	num tID;
+
+	num mFirstName;
+	num mLastName;
+	num mTotalSpent;
+	num mID;
+
+	string bothEnd;
+
+	checkTransaction();
+	checkMaster();
+	checkEnd();
+
+	END = 999;
+	string ERROR = "no master record exists for transaction for" + tId;
+
+readOpen()
+	open transactionFile "CurlUpAndDyeMaster.dat";
+	open masterFile "CurlUpAndDyeTransaction.dat";
+	open updatedFile "CurlUpAndDyeUpdated.dat";
+	open errorReport "CurlUpAndDyeErrorReport.dat";
+	checkTransaction();
+	checkMaster();
+	checkEnd();
+
+writeLoop()
+	if (tId = mId) {
+		mTotalSpent = mTotalSpent + tServiceCost;
+		output mFirstName, mLastName, mTotalSpent, mId to updatedFile;
+		readMaster();
+		readTransaction();
+	}end if
+	else if (tId > mI) {
+		output mFirstName, mLastName, mTotalSpent, mId, to updatedFile;
+		readMaster();
+	}end else if
+	else {
+		output ERROR;
+		output mFirstName, mLastName, mTotalSpent, mId to updatedFile;
+		readTransaction();
+	}end else
+	checkEnd();
+	return
+
+finish();
+	close masterFile;
+	close transactionFile;
+	close updatedFile;
+	close errorReport;
